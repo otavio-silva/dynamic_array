@@ -56,7 +56,7 @@ template <typename T> class dynamic_array
 				}
 				bool operator!=(const iterator& b)
 				{
-					return !(*this == b);
+					return this->p != b.p;
 				}
 				bool operator<(const iterator& b)
 				{
@@ -92,7 +92,7 @@ template <typename T> class dynamic_array
 		{
 			this->m_size = r.m_size;
 			this->m_data = new T[this->m_size];
-			std::memcpy(this->m_data, r.m_data, sizeof r.m_data);
+			std::memcpy(this->m_data, r.m_data, sizeof(r.m_data));
 		}
 		std::size_t size() const { return m_size; }
 		iterator begin() {return iterator(m_data); }
