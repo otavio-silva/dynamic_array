@@ -19,7 +19,7 @@ int main([[maybe_unused]]int argc, [[maybe_unused]]char **argv)
 {
 	auto t = dynamic_array<float>(8);
 	t[1] = 9;
-	for (auto& item : t)
+	for (const auto& item : t)
 	{
 		std::cout << item << std::endl;
 	}
@@ -28,7 +28,7 @@ int main([[maybe_unused]]int argc, [[maybe_unused]]char **argv)
 	{
 		s = random_string(8);
 	}
-	for (auto& item : ss)
+	for (const auto& item : ss)
 	{
 		std::cout << item << std::endl;
 	}

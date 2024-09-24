@@ -15,10 +15,10 @@ template <typename T> class dynamic_array
 				T* p;
 			public:
 				using iterator_category = std::random_access_iterator_tag;
-    			using value_type = T;
-    			using difference_type = std::ptrdiff_t;
-    			using pointer = T*;
-    			using reference = T&;
+				using value_type = T;
+				using difference_type = std::ptrdiff_t;
+				using pointer = T*;
+				using reference = T&;
 				iterator(T* ptr) : p(ptr) {}
 				T& operator*() const
 				{
@@ -68,13 +68,13 @@ template <typename T> class dynamic_array
 				}
 				iterator& operator-(const std::ptrdiff_t i)
 				{
-					iterator it = *this;
+					iterator &it = *this;
 					*(this) - i;
 					return it;
 				}
 				iterator& operator+(const std::ptrdiff_t i)
 				{
-					iterator it = *this;
+					iterator &it = *this;
 					*(this) + i;
 					return it;
 				}
@@ -85,8 +85,8 @@ template <typename T> class dynamic_array
 		};
 		dynamic_array(std::size_t size)
 		{
-			m_size = size;
-			m_data = new T[m_size]();
+			this->m_size = size;
+			this->m_data = new T[m_size]();
 		}
 		dynamic_array(const dynamic_array<T>& r)
 		{
